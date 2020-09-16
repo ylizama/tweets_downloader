@@ -4,10 +4,10 @@ from TwitterAPI import TwitterAPI
 from TwitterAPI import TwitterConnectionError
 
 
-consumer_key = "your_consumer_key"
-consumer_secret = "your_consumer_secret_key"
-access_token_key = "your_access_token"
-access_token_secret = "your_token_secret"
+consumer_key = "api_key"
+consumer_secret = "api_secret_key"
+access_token_key = "token_key"
+access_token_secret = "token_secret_key"
 
 # This is the object that we will use to send the request to Twitter
 # A request is a HTTP request, just like your browser does when it goes to a website!
@@ -37,7 +37,7 @@ def get_tweets(base_outfile, kwrd):
                     pass
                 else:
                     num_lines += 1
-                    if not num_lines % 1000000:
+                    if not num_lines % 10000:
                         file_num += 1
                         f.close()
                         outfile = "{0}{1}.json".format(base_outfile, file_num)
@@ -48,6 +48,6 @@ def get_tweets(base_outfile, kwrd):
     file_num += 1
 
 
-get_tweets('your_folder_location', 'your search keywords (space = AND, comma = OR)')
+get_tweets('your_tweets_file_folder/', 'your keywords go here')
 
 
